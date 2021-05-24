@@ -18,5 +18,9 @@ JOIN Customer c
     ON c.CustomerId = i.CustomerId
     WHERE c.country IS "Brazil";
 
+-- 4. sales_agents.sql: Provide a query showing only the Employees who are Sales Agents.
 
-    
+SELECT * FROM Employee
+WHERE Title IS "Sales Support Agent";
+
+
