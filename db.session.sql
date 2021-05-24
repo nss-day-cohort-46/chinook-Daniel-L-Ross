@@ -88,6 +88,10 @@ WHERE InvoiceId = 37
 
 -- 11. line_items_per_invoice.sql: Looking at the InvoiceLine table, provide a query that 
             -- COUNTs the number of line items for each Invoice. HINT: GROUP BY
+SELECT InvoiceID, COUNT(InvoiceLineId) as LineItemCount
+FROM InvoiceLine
+GROUP BY InvoiceId
+
 
 -- 12. line_item_track.sql: Provide a query that includes the purchased track name with each invoice line item.
 
