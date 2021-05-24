@@ -59,3 +59,10 @@ JOIN Customer c
 JOIN Employee e
     ON e.employeeId = c.supportRepId
 ORDER BY CustomerName
+
+-- 8. total_invoices_{year}.sql: How many Invoices were there in 2009 and 2011?
+
+SELECT COUNT(*) as InvoiceCount
+FROM Invoice
+WHERE InvoiceDate  like"%2009%"
+OR InvoiceDate like"%2011%"
