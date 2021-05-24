@@ -24,3 +24,27 @@ SELECT * FROM Employee
 WHERE Title IS "Sales Support Agent";
 
 
+-- 5. unique_invoice_countries.sql: Provide a query showing a unique/distinct list of billing 
+        -- countries from the Invoice table.
+
+SELECT DISTINCT BillingCountry
+FROM Invoice
+ORDER BY BillingCountry;
+
+-- 6. sales_agent_invoices.sql: Provide a query that shows the invoices associated with each sales agent. 
+        -- The resultant table should include the Sales Agent's full name.
+
+SELECT 
+    i.invoiceId,
+    i.customerId,
+    e.FirstName || ' ' || e.LastName as FullName
+FROM Invoice i
+JOIN Customer c
+    ON c.customerId = i.customerId
+JOIN Employee e
+    ON e.employeeId = c.supportRepId
+ORDER BY FullName
+
+-- 7. invoice_totals.sql: Provide a query that shows the Invoice Total, Customer name, 
+        -- Country and Sale Agent name for all invoices and customers.
+
