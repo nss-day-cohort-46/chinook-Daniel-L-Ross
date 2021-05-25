@@ -5,7 +5,7 @@ SUM(i.total),
 e.*
 FROM employee e 
 INNER JOIN Customer c
-ON e.employeeId = c.supportRepId
+    ON e.employeeId = c.supportRepId
 INNER JOIN Invoice i
-on i.customerId = c.customerId
+    ON i.customerId = c.customerId
 GROUP BY e.EmployeeId
