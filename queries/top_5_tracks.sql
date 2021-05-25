@@ -5,7 +5,6 @@ SELECT
     COUNT(il.trackId) as purchaseCount
 FROM InvoiceLine il
 INNER JOIN track t ON t.trackid = il.trackid
-INNER JOIN invoice i on i.invoiceId = il.invoiceId
 GROUP BY il.trackId
 ORDER BY purchaseCount DESC
 LIMIT 5

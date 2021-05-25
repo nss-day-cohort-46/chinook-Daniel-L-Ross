@@ -5,7 +5,7 @@ trackName,
 MAX(purchaseCount) as mostPurchased
 FROM (SELECT 
             t.name as trackName, 
-            COUNT(il.trackId) as purchaseCount
+            COUNT(il.invoiceId) as purchaseCount
         FROM InvoiceLine il
         INNER JOIN track t ON t.trackid = il.trackid
         INNER JOIN invoice i on i.invoiceId = il.invoiceId
